@@ -1,0 +1,44 @@
+body{
+    background-color: black;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    height: 748px;
+    width: 748px;
+
+    display: grid;
+    grid-template-columns: 320px 198px 153px 50px;
+    grid-template-rows: 414px 130px 115px 20px;
+    gap: 10px;
+}
+.card{
+    background-color: beige;
+}
+.red{
+    background-color: red;
+}
+.yellow{
+    background-color: rgb(232, 194, 5);
+}
+.gray{
+    background-color: gray;
+}
+.blue{
+    background-color: rgb(19, 19, 102);
+}
+
+.two{
+    grid-column: span 3;
+}
+.three,.four{
+    grid-row: span 2;
+}
+.four{
+    grid-column: span 2;
+}
+.six{
+    grid-row: span 2;
+}
