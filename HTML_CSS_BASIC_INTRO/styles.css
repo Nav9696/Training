@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Open+Sans&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: #FDEBD0;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+
+    color: #F7CAC9;
+    
+}
+.container{ 
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+span{
+    font-size: 30px;
+    font-weight: 800;
+}
+.title-card{
+    border-radius: 5%;
+    height: fit-content;
+    background-color: #DC143C ;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title-card > img{
+    margin: 0;
+    float: left;
+    width: 40%;
+    border-radius: 100%;
+    padding: 50px;
+}
+.base-intro{
+    width: 100%;
+    height: auto;
+    font-size: larger;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.nav-icon{
+    background-color: #DC143C;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 150px;
+    border-radius: 50%;
+}
