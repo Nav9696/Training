@@ -19,12 +19,17 @@ body{
     gap: 20px;
     justify-content: center;
 }
-span{
+.title-card span{
+    color: aliceblue;
+    font-size: 30px;
+    font-weight: 800;
+}
+#background span{
     font-size: 30px;
     font-weight: 800;
 }
 .title-card{
-    border-radius: 5%;
+    border-radius: 8%;
     height: fit-content;
     background-color: #DC143C ;
     padding: 50px;
@@ -60,4 +65,31 @@ span{
     text-align: center;
     height: 150px;
     border-radius: 50%;
+}
+.nav-icon > a{
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.background-card{
+    border-radius: 10%;
+    color: #DC143C;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.background-card{
+    gap: 5px;
+}
+.card-body > h4{
+    color: #F7CAC9;
+    font-weight: 800;
+}
+.card{
+    width: 300px;
+    background-color: #DC143C;
+    color: #F7CAC9;
+    border-radius:10% ;
 }
