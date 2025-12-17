@@ -79,10 +79,9 @@ body{
     display: flex;
     justify-content: center;
     text-align: center;
-}
-.background-card{
     gap: 5px;
 }
+
 .card-body > h4{
     color: #F7CAC9;
     font-weight: 800;
@@ -93,3 +92,47 @@ body{
     color: #F7CAC9;
     border-radius:10% ;
 }
+.project-card{
+    border-radius: 10%;
+    color: #DC143C;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+}
+#project span{
+    font-size: 30px;
+    font-weight: 800;
+}
+.project-card-body{
+    color: #F7CAC9;
+    border-radius: 10%;
+    background-color: #DC143C;
+    padding: 20px;
+
+}
+
+.intrest-card{
+    border-radius: 10%;
+    color: #DC143C;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+}
+#intrests span{
+    font-size: 30px;
+    font-weight: 800;
+}
+.intrest-card-body{
+    color: #F7CAC9;
+    border-radius: 10%;
+    background-color: #DC143C;
+    padding: 50px;
+
+}
+.image > img{
+    border-radius: 20%;
+
+}
+
