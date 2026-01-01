@@ -1,0 +1,19 @@
+{
+  "name": "learning-npm",
+  "version": "1.0.0",
+  "description": "mm",
+  "license": "ISC",
+  "author": "nav",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "inquirer": "^13.1.0",
+    "qr-image": "^3.2.0",
+    "sillyname": "^0.1.0",
+    "superhero": "^2.14.31",
+    "superheroes": "^4.0.0"
+  }
+}
