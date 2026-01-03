@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeekDay Exercise</title>
+</head>
+<body>
+    <h1>Hey, it's <%= dayType %>, <%= advice%> </h1>
+    <h1><%= title %></h1>
+    <h3>Current Second:<%= seconds %></h3>
+    <% if(seconds%2===0){%>
+    <ul>
+    <%    for(var i=0;i<items.length;i++){ %>
+            <li>
+                <%= items[i] %>
+            </li>
+    <%    }%>
+    </ul>
+    <%}else{%>
+        
+        <p>No items to Display</p>
+    <% } %>
+    <h3><%- htmlContent %></h3>
+
+</body>
+</html>
