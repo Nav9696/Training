@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background-color: #333;
+ 
+}
+.card{
+    margin: 50px;
+}
+.card h1{
+    text-align: center;
+}
+.cover-image{
+    width: 30%;
+    border-radius: 20px 0 0 20px ;
+    background-image: url("/cover.jpg");
+    background-size: cover;
+}
+
+.addpost{
+    margin: 50px;
+    border-radius: 20px;
+    background-color: whitesmoke;
+}
+.addpostform{
+    
+    font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.addpostform > .container > *{
+    margin: 10px;
+    padding: 10px;
+}
