@@ -21,7 +21,7 @@ function saveDatabase(data){
 }
 class Blog{
     constructor(id,title,author,post){
-        this.id=id;
+        this.id=Number(id);
         this.title=title;
         this.author=author;
         this.post=post;
@@ -56,6 +56,36 @@ app.post("/add",(req,res)=>{
     saveDatabase(database);
     res.redirect("/");
 });
+
+
+app.get("/edit/:id",(req,res)=>{
+    var id=Number(req.params.id);
+    var post=database.find(p=>p.id===id);
+    res.render(__dirname+"/views/edit.ejs",{post:post});
+})
+app.post("/edit/:id",(req,res)=>{
+    const id=Number(req.params.id);
+    const post=database.find(p=>p.id===id);
+    if(!post){
+        return res.send("No post");
+    }
+    post.title=req.body.title;
+    post.author=req.body.author;
+    post.post=req.body.post;
+
+    saveDatabase(database);
+    res.redirect("/");
+});
+
+app.post("/delete/:id",(req,res)=>{
+    const id=Number(req.params.id);
+    database=database.filter(p=>p.id!==id);
+    console.log(database);
+    
+    saveDatabase(database);
+    res.redirect("/");
+})
+
 app.listen(port,()=>{
     console.log(`Server running in port:${port}`);
 });
