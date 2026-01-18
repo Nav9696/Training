@@ -1,0 +1,10 @@
+body{
+    background: linear-gradient(to bottom right, red, blue);   
+    background-size:cover;
+    height: 100vh;
+}
+
+img{
+    height: 300px;
+    width: auto;
+}

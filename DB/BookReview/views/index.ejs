@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Review</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="addContainer" hidden>
+        <form action="/add" method="post">
+                <div class="card">
+                    <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="title" >
+                </div>
+                <div class="mb-3">
+                    <label for="review" class="form-label">review</label>
+                    <input type="text" class="form-control" name="review">
+                </div>
+                <div class="mb-3">
+                    <label for="rating" class="form-label">rating</label>
+                    <input type="text"  class="form-control" name="rating">
+                </div>
+                <div class="mb-3">
+                    <label for="ISBN" class="form-label">ISBN No.</label>
+                    <input type="number"class="form-control" name="ISBN">
+                    
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+    </div>
+    <button class="btn btn-primary" onclick="document.getElementById('addContainer').toggleAttribute('hidden')">Add</button>
+    <% if(items.length===0){ %>
+        <h2>No Data present in the Table!</h2>
+    <% } else{%>
+        <div class="container mt-4">
+  <div class="d-flex flex-wrap gap-3 justify-content-start">
+ 
+    <%    items.forEach((data)=>{ %>
+            <div class="card" style="width: 18rem;">
+                <img src="https://covers.openlibrary.org/b/isbn/<%= data.isbn %>-L.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><%= data.title %></h5>
+                    ISBN:<%= data.isbn %>
+                    <form action="/edit" method="post">
+                        <input type="hidden" name="editId" value="<%=data.id%>">
+                        <input type="text" name="editReview" id="editReview<%=data.id%>" value="<%= data.review %>" hidden>
+                        <input type="text" name="editRating" id="editRating<%=data.id%>" value="<%= data.rating %>" hidden>
+                        <input class="btn btn-primary" type="submit" id="Done<%=data.id%>" value="Done" hidden>
+                    </form>
+                    <p id="reviewText<%=data.id%>" class="card-text"><%= data.review %></p>
+                    <p id="ratingText<%=data.id%>" class="card-text"><%= data.rating %>⭐</p> 
+                    <button id="editButton<%=data.id%>" class="btn btn-primary" onclick="handler('<%=data.id%>')">Edit Data</button>
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="deleteID" value="<%= data.id %>">
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+    <% }); %>
+  </div></div>
+<% } %>
+
+
+    <script>
+        function handler(id) {
+            document.getElementById("reviewText" + id).setAttribute("hidden", true)
+            document.getElementById("ratingText" + id).setAttribute("hidden", true)
+            document.getElementById("editButton" + id).setAttribute("hidden", true)
+            document.getElementById("Done" + id).removeAttribute("hidden")
+            document.getElementById("editReview" + id).removeAttribute("hidden")
+            document.getElementById("editRating" + id).removeAttribute("hidden")
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
